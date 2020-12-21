@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { CSSTransition } from "react-transition-group";
 import { connect } from "react-redux";
+import action from './Header.action';
 
 //router
 import router from "../../data/router";
@@ -14,6 +15,16 @@ import "./Header.css";
 class Header extends Component {
   state = {
   };
+
+
+  logOut = (event) => {
+    if(event.target.textContent === 'Logout'){
+      localStorage.clear();
+      this.props.action_LOGOUT();
+    };
+  }
+
+
 
   render() {
 
@@ -38,7 +49,7 @@ class Header extends Component {
             <Link to={router.registration} className="registration-link">
               {registration}
             </Link>
-            <Link to={router.login}>{loginLogout}</Link>
+            <Link to={router.login} onClick={this.logOut}>{loginLogout}</Link>
           </div>
         </div>
         <CSSTransition
@@ -58,8 +69,12 @@ const mapStateToProps = (state) => {
     state: state,
   };
 };
-// const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatch) => {
+  return {
+    action_LOGOUT: (value) => {
+      dispatch(action.logOut(value))
+    }
+  }
+}
 
-// }
-
-export default connect(mapStateToProps /* mapDispatchToProps */)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

@@ -2,9 +2,9 @@ import { createReducer } from "@reduxjs/toolkit";
 const initState = {
   contacts: [],
   filter: [],
-  userId:'',
+  userId: "",
   loader: false,
-  userName: 'Guest',
+  userName: "Guest",
 };
 
 // const reducer = (state = initState, { type, payload }) => {
@@ -34,34 +34,42 @@ const initState = {
 // };
 
 const reducer = createReducer(initState, {
-  ADD: (state, {payload }) => ({
+  ADD: (state, { payload }) => ({
     ...state,
     contacts: [...state.contacts, ...payload.contacts],
   }),
-  DEL: (state, {payload }) => ({
+  DEL: (state, { payload }) => ({
     ...state,
     contacts: [...payload.contacts],
     filter: [...payload.filter],
   }),
-  FILTER: (state, {payload }) => ({
+  FILTER: (state, { payload }) => ({
     ...state,
     filter: [...payload.filter],
   }),
-  ALERT: (state, {payload }) => ({
+  ALERT: (state, { payload }) => ({
     ...state,
     isAlert: payload.isAlert,
     alertMessage: payload.alertMessage,
   }),
-  LOADER: (state, {payload}) => ({
+  LOADER: (state, { payload }) => ({
     ...state,
-    loader: payload.loader
+    loader: payload.loader,
   }),
-  LOGIN: (state, {payload}) => ({
+  LOGIN: (state, { payload }) => ({
     ...state,
     userName: payload.userName,
     userId: payload.userId,
-    contacts: [...payload.contacts]
-  })
+    contacts: [...payload.contacts],
+  }),
+  LOGOUT: (state, { payload }) => ({
+    ...state,
+    contacts: [],
+    filter: [],
+    userId: "",
+    loader: false,
+    userName: "Guest",
+  }),
 });
 
 export default reducer;
