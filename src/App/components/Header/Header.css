@@ -1,0 +1,26 @@
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  min-height: 2em;
+  width: 100vw;
+
+  display: flex;
+  align-items: center;
+
+  background-color: #6495ED;
+  box-shadow: 0 2px 4px #626567;
+}
+.header-container{
+  width: 100%;
+  padding: 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.login-block{
+  width: 10em;
+}
+.registration-link{
+  margin-right: 15px;
+}

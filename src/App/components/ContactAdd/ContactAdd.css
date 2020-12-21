@@ -1,0 +1,19 @@
+.contactAdd{
+  transition: 400ms linear;
+}
+.contactAdd-appear{
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.contactAdd-appear-active{
+  transform: translateX(0);
+  opacity: 1;
+}
+/* .contactAdd-exit-active{
+  transform: translateX(0);
+  opacity: 1;
+}
+.contactAdd-exit-done{
+  transform: translateX(-100%);
+  opacity: 0;
+} */

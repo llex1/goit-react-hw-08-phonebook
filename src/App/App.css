@@ -1,0 +1,55 @@
+body {
+  font-family: sans-serif;
+  padding-top: 2em;
+  padding: 0;
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.container {
+  position: relative;
+  width: 500px;
+  padding: 0 15px;
+  margin: 6em auto 0px;
+}
+.container::before {
+  content: "under construction";
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  font-size: 1.5rem;
+  color: #ccccff;
+}
+
+
+.form{
+  display: flex;
+  flex-direction: column; 
+  margin-bottom: 1em;
+ }
+ .label{
+   font-size: 0.8em;
+   color: #5D6D7E;
+ }
+ .input{
+   padding: 1em;
+   margin-bottom: 1em;
+ }
+ .btn{
+   padding: 1em;
+   cursor: pointer;
+ }
+
+
+
+*,
+*::before,
+*::after {
+  /* outline: 1px dotted dodgerblue; */
+}
